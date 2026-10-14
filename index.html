@@ -3,32 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GuastoFix Milano - Gestione Guasti Condominiali</title>
+<title>GuastoFix Milano - Team Esperti Informatici</title>
 <style>
-body{font-family:-apple-system,sans-serif;background:#f5f7fa;margin:0;padding:20px}
-.card{max-width:480px;margin:0 auto;background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
-h1{margin:0 0 8px} .sub{color:#666;margin-bottom:20px}
-.btn{width:100%;padding:14px;border-radius:12px;border:0;font-weight:700;font-size:16px;margin-top:10px}
-.btn-green{background:#16a34a;color:#fff} .btn-black{background:#111;color:#fff}
-input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin-top:8px;box-sizing:border-box}
-.badge{display:inline-block;background:#dcfce7;color:#166534;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700}
+body{font-family:-apple-system,sans-serif;background:#0f172a;margin:0;padding:20px;color:#0f172a}
+.card{max-width:520px;margin:0 auto;background:#fff;border-radius:20px;padding:28px;box-shadow:0 10px 40px rgba(0,0,0,.2)}
+.badge{display:inline-block;background:#dbeafe;color:#1e40af;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:800;letter-spacing:.5px}
+h1{margin:12px 0 8px;font-size:28px;line-height:1.1}
+.sub{color:#475569;margin-bottom:6px;font-size:16px;line-height:1.4}
+.team{background:#f1f5f9;border-radius:12px;padding:12px 14px;margin:16px 0;display:flex;gap:10px;align-items:center}
+.team-ico{width:40px;height:40px;background:#0f172a;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800}
+.team b{font-size:14px}.team span{font-size:12px;color:#64748b;display:block}
+.btn{width:100%;padding:15px;border-radius:12px;border:0;font-weight:800;font-size:16px;margin-top:10px;cursor:pointer}
+.btn-green{background:#16a34a;color:#fff}.btn-dark{background:#0f172a;color:#fff}
+input,select,textarea{width:100%;padding:13px;border:1.5px solid #e2e8f0;border-radius:11px;margin-top:8px;box-sizing:border-box;font-size:15px}
+label{font-weight:700;font-size:13px;margin-top:14px;display:block;color:#334155}
+.trust{margin-top:16px;display:flex;gap:16px;font-size:11px;color:#64748b}
 </style>
 </head>
 <body>
 <div class="card">
-<span class="badge">PER AMMINISTRATORI MILANO</span>
+<span class="badge">TEAM DI ESPERTI INFORMATICI • MILANO</span>
 <h1>🛠️ GuastoFix Milano</h1>
-<div class="sub">Basta chiamate dei condòmini. QR nel condominio, guasto gestito in automatico.</div>
+<div class="sub">Siamo un <b>team di esperti informatici</b> specializzati in gestionali per amministratori. Basta chiamate dei condòmini: QR nel condominio, guasto gestito in automatico.</div>
+
+<div class="team">
+<div class="team-ico">IT</div>
+<div><b>Sviluppato da professionisti IT</b><span>Sicurezza, assistenza e attivazione in 5 minuti</span></div>
+</div>
+
 <label>Condominio</label>
 <input id="cond" placeholder="Es. Via Padova 12, Milano">
 <label>Tipo guasto</label>
-<select id="tipo"><option>Ascensore bloccato</option><option>Perdita acqua</option><option>Porta / Cancello</option><option>Luce scale</option><option>Caldaia</option></select>
+<select id="tipo"><option>Ascensore bloccato</option><option>Perdita acqua</option><option>Porta / Cancello</option><option>Luce scale</option><option>Caldaia / Riscaldamento</option></select>
 <label>Descrizione</label>
-<textarea id="desc" rows="3" placeholder="Piano, cosa succede..."></textarea>
-<button class="btn btn-green" onclick="invia()">+ Segnala Guasto (Demo)</button>
-<button class="btn btn-black" onclick="alert('Demo Milano: QR + tecnico assegnato automatico')">⚡ Vedi come funziona</button>
-<div id="ok" style="display:none;margin-top:16px;background:#f0fdf4;padding:12px;border-radius:10px;color:#166534"></div>
-<p style="font-size:12px;color:#888;margin-top:20px">Demo live per amministratori Milano. Attivazione 5 min. 99€ per i primi 3 condomini.</p>
+<textarea id="desc" rows="3" placeholder="Piano, dettaglio guasto..."></textarea>
+
+<button class="btn btn-green" onclick="invia()">+ Segnala Guasto (Demo Live)</button>
+<button class="btn btn-dark" onclick="alert('GuastoFix è un prodotto del nostro team IT di Milano. Sistema: QR condominiale -> notifica admin + tecnico + tracciamento. Nessuna app da installare.')">⚡ Chi siamo - Team IT Milano</button>
+
+<div id="ok" style="display:none;margin-top:16px;background:#f0fdf4;padding:14px;border-radius:12px;color:#166534;border:1px solid #bbf7d0"></div>
+
+<div class="trust"><span>✓ Server sicuri EU</span><span>✓ Assistenza dedicata</span><span>✓ Attivazione 5 min</span></div>
+<p style="font-size:11px;color:#94a3b8;margin-top:14px;text-align:center">Soluzione professionale del nostro team informatico per amministratori di Milano e Lombardia. Demo per i primi 3 condomini a 99€.</p>
 </div>
 <script>
 function invia(){
@@ -36,7 +52,7 @@ const c=document.getElementById('cond').value||'Condominio Milano';
 const t=document.getElementById('tipo').value;
 const d=document.getElementById('ok');
 d.style.display='block';
-d.innerHTML='✅ Ricevuto per <b>'+c+'</b><br>Tipo: '+t+'<br><br>Amministratore e tecnico avvisati.';
+d.innerHTML='✅ <b>Demo ricevuta dal nostro sistema</b><br>Condominio: '+c+'<br>Tipo: '+t+'<br><br>Il nostro team IT ha inoltrato la segnalazione a amministratore e tecnico.';
 window.scrollTo(0,document.body.scrollHeight);
 }
 </script>
